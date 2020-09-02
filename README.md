@@ -1,6 +1,6 @@
 ## [입문자를 위한 web-crawling]
 
-[참조 강의](https://book.coalastudy.com/data_crawling/)
+[참조 강의](https://book.coalastudy.com/data_crawling/)      
 1.
 ```
 모든것은 구름 내 IDE 사용한다는 가정입니다.
