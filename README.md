@@ -1,6 +1,19 @@
 ## [입문자를 위한 web-crawling]
 
-[참조 강의](https://book.coalastudy.com/data_crawling/)      
+[참조 강의](https://book.coalastudy.com/data_crawling/) 
+-----
+```
+참조 강의와 같이 할 수 없습니다. 따라서 가장 주차마다
+핵심요소를 간추리고 이에 맞게 예시를 찾아보고 변형합니다.
+
+핵심요소를 통해서 이와 잘 부합하는 강의로 다시 재구성합니다.
+실습의 경우 유사하기 때문에, 각각마다 가장 유사한 것을 찾아
+이와 비슷한 예시를 주차마다 목표로 삼습니다.
+재구성 이후 찾은 자료들과 비교해 커리를 다시 새로 내 놓습니다.
+```
+
+[참조자료](https://media.fastcampus.co.kr/insight/why-beginners-should-master-them/)
+
 1.
 ```
 모든것은 구름 내 IDE 사용한다는 가정입니다.
