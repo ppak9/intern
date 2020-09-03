@@ -1,4 +1,4 @@
-# 중간과제 네이버 실시간 검색어 가져오기
+# 실습과제(숙제) 네이버 실시간 검색어 1등 기사 가져오기
 
 import requests
 from bs4 import BeautifulSoup
