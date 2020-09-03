@@ -23,16 +23,20 @@ for ar in articles:
     title = ar.select_one('dt a')
     # print(title)
     url2 = title.attrs['href']
-    # print(url)
+    # print(url2)
 
     each = requests.get(url2, headers=headers)
     soup_each = BeautifulSoup(each.text,'html.parser')
     # print(soup_each)
     
     for target in soup_each:
-        time = soup_each.select_one('div.sponsor span.t11').text
+        time = soup_each.select_one('span.t11').text
+        # print(type(time))
         poster = soup_each.select_one('span.end_photo_org img')
+        # print(poster)
         poster_src = poster.attrs['src']
-        urlretrieve(poster_src, 'poster/'+ time +'.png')
+        # print(poster_src)
+
+    urlretrieve(poster_src, 'poster/'+ time[:2] +'.png')
 
   
