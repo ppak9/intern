@@ -1,3 +1,5 @@
+# 중간 과제 네이버 기사 가지고오기
+
 import requests
 from bs4 import BeautifulSoup
 
