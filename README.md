@@ -1,6 +1,7 @@
 ## [입문자를 위한 web-crawling]
 
-> [참조 강의](https://book.coalastudy.com/data_crawling/) 
+> [참조 강의](https://book.coalastudy.com/data_crawling/)    
+>  
 > [참조자료](https://media.fastcampus.co.kr/insight/why-beginners-should-master-them/)
 
 1.
@@ -77,7 +78,7 @@ iteration 반복 및 user_test 거쳐보기
 
 -----
 
-#### 5주차 강의 1 [1위부터 10위까지 뉴우스~], [쇼핑몰, 다 내꺼야.]
+### 5주차 강의 1 [1위부터 10위까지 뉴우스~], [쇼핑몰, 다 내꺼야.]
 
 -----
 
@@ -93,7 +94,7 @@ iteration 반복 및 user_test 거쳐보기
 
 -----
 
-#### [6주차 강의] 네이버 지도 크롤링
+### [6주차 강의] 네이버 지도 크롤링
 
 -----
 
