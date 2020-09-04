@@ -1,10 +1,7 @@
 ## [입문자를 위한 web-crawling]
 
-[참조 강의](https://book.coalastudy.com/data_crawling/) 
------
-
-
-[참조자료](https://media.fastcampus.co.kr/insight/why-beginners-should-master-them/)
+> [참조 강의](https://book.coalastudy.com/data_crawling/) 
+> [참조자료](https://media.fastcampus.co.kr/insight/why-beginners-should-master-them/)
 
 1.
 ```
@@ -51,6 +48,8 @@ iteration 반복 및 user_test 거쳐보기
 
 ### 3주차: 진짜 크롤링 해볼까?
 
+-----
+
 * [핵심요소]:3주차 목표는 크롤링에 대한 기본 이해입니다.
 * [핵심요소]: 3주차에 필요한 개념들을 소개합니다.
 
@@ -61,7 +60,10 @@ iteration 반복 및 user_test 거쳐보기
 
 
 -----
+
 ### 4주차 강의 [네이버 검색? 한 번에!]
+
+-----
 
 * 파이선을 통해 file 함수를 다뤄보는 실습을 해봅니다.
 * file을 통해 csv로 데이터를 저장하는 방법을 배워봅니다.
@@ -73,8 +75,11 @@ iteration 반복 및 user_test 거쳐보기
 #### [4-4 강의 4: 실제 네이버 기사 가지고 와보기] 5분
 #### [4-5 실시간 1등 뉴스 가지고 오기!] 7분
 
+-----
 
 #### 5주차 강의 1 [1위부터 10위까지 뉴우스~], [쇼핑몰, 다 내꺼야.]
+
+-----
 
 * 조건문에 대한 이해와 조건을 다르게 해 수집 데이터를 다르게 해 봅니다.
 * 이미지 크롤링에 대해 이해합니다.
@@ -87,6 +92,7 @@ iteration 반복 및 user_test 거쳐보기
 #### [5-6 추가 실습: 내가 원하는 이미지 가지고 오기] 3분
 
 -----
+
 #### [6주차 강의] 네이버 지도 크롤링
 
 -----
