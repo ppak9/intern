@@ -1,29 +1,45 @@
+# 4,5 xlsx로 묶은 이후 마지막 실습으로 변경 
+# 마지막 실습으로 변경
 import requests
 from bs4 import BeautifulSoup
 import openpyxl
 
-wb=openpyxl.Workbook()
-sheet=wb.active
+headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
 
-# sheet.append 를 사용할 경우 list로 업데이트 해 나감
-sheet.append(['제목','채널'])
+test =[]
 
-url='https://tv.kakao.com/category/drama'
-raw = requests.get(url)
-# 여기서 한 번 끊기, requests의 역할이 무엇인지를 확인하기 위해
+# User-agent
+url = 'https://datalab.naver.com/keyword/realtimeList.naver'
+raw = requests.get(url,headers=headers)
+soup = BeautifulSoup(raw.content,'html.parser')
+result = soup.select('span.item_title_wrap')
+wb = openpyxl.Workbook()
 
+for item in result:
+    keyword = item.select_one('span.item_title').text.strip()
+    test.append(keyword)
+# 동시에 네이버 실시간 검색어 1위 기사 가지고 오기
+# 강의 내용: 예외처리 + load에 대한 설명
+try:
+    wb=openpyxl.load_workbook("navernews_xlsx")
+    sheet = wb.active
+    print("불러오기 완료")
+except:
+    wb = openpyxl.Workbook()
+    sheet = wb.active
+    sheet.append(["제목","언론사"])
 
-html = BeautifulSoup(raw.text,'html.parser')
+# 강의 내용: 추가적인 html 구조 파악
+for n in range(1,100,10):
+    raw = requests.get('https://search.naver.com/search.naver?where=news&query='+test[0])
+    # url을 통해 기사 수집
+    soup = BeautifulSoup(raw.text,'html.parser')
+    articles = soup.select("ul.type01 > li")
 
-clips=html.select("a.link_contents")
+    for ar in articles:
+        title = ar.select_one("a._sp_each_title").text
+        company = ar.select_one('span._sp_each_source').text
+        print(title,company)
+        sheet.append([title,company])
 
-# 지난번 반복한 list 에 관련한 rule들을 그대로 가지고 오면 됨
-
-for k in clips:
-    title = k.select_one("strong.tit_item").text.strip()
-    channel = k.select_one("span.txt_item").text.strip()
-    # [scenario 3] text 형태로의 변환이 없을 경우 <class 'bs4.element.Tag'>로 들어오게 됨
-    sheet.append([title,channel])
-    # csv 는 comma 로서 구분이 가능한 확장 파일이지만 xlsx 의 경우 저렇게 append 안에 list형태로 나아가야함
-
-wb.save('test2.xlsx')
+wb.save('navertv.xlsx')

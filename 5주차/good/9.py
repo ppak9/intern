@@ -28,7 +28,7 @@ for ar in articles:
     each = requests.get(url2, headers=headers)
     soup_each = BeautifulSoup(each.text,'html.parser')
     # print(soup_each)
-    
+    n = 1
     for target in soup_each:
         time = soup_each.select_one('span.t11').text
         # print(type(time))
@@ -36,7 +36,6 @@ for ar in articles:
         # print(poster)
         poster_src = poster.attrs['src']
         # print(poster_src)
-
-    urlretrieve(poster_src, 'poster/'+ time[:2] +'.png')
+        urlretrieve(poster_src, 'poster/'+ str(n) +'.jpg')
 
   

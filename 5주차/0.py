@@ -1,11 +1,9 @@
-# 실습과제(숙제) 네이버 실시간 검색어 1등 기사 가져오기
-
+# 4,5 xlsx로 묶은 이후 마지막 실습으로 변경 
+# 마지막 실습으로 변경
 import requests
 from bs4 import BeautifulSoup
 import openpyxl
 
-# f= open('test.csv','w')
-# f.write('제목')
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
 
 test =[]
@@ -21,6 +19,7 @@ for item in result:
     keyword = item.select_one('span.item_title').text.strip()
     test.append(keyword)
 # 동시에 네이버 실시간 검색어 1위 기사 가지고 오기
+# 강의 내용: 예외처리 + load에 대한 설명
 try:
     wb=openpyxl.load_workbook("navernews_xlsx")
     sheet = wb.active
@@ -30,8 +29,10 @@ except:
     sheet = wb.active
     sheet.append(["제목","언론사"])
 
+# 강의 내용: 추가적인 html 구조 파악
 for n in range(1,100,10):
     raw = requests.get('https://search.naver.com/search.naver?where=news&query='+test[0])
+    # url을 통해 기사 수집
     soup = BeautifulSoup(raw.text,'html.parser')
     articles = soup.select("ul.type01 > li")
 

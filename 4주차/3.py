@@ -1,3 +1,5 @@
+#1,2,3 .py 다 같이 하나 강의로 
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -16,8 +18,6 @@ raw = requests.get(url)
 html = BeautifulSoup(raw.text,'html.parser')
 
 clips=html.select("a.link_contents")
-
-# 지난번 반복한 list 에 관련한 rule들을 그대로 가지고 오면 됨
 
 for k in clips:
     title = k.select_one("strong.tit_item").text.strip()

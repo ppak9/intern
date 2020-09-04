@@ -12,6 +12,7 @@ for m in movie:
     title = m.select_one('dt.tit a').text
     star = m.select_one('div.star_t1 span.num').text
     rate = m.select_one('dl.info_exp div.star_t1 span.num').text
+    #2,3,4,5를 가지고 온 것을 base로 조건문을 거는 것이 중요
     if float(rate)< 5.0:
         print('*')
     else:

@@ -1,23 +1,23 @@
-# 중간과제 네이버 실시간 검색어 가져오기
-
+import openpyxl
 import requests
 from bs4 import BeautifulSoup
 
-# f= open('test.csv','w')
-# f.write('제목')
-headers ={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
+wb = openpyxl.Workbook()
 
-# User-agent
-url = 'https://datalab.naver.com/keyword/realtimeList.naver'
-raw =requests.get(url,headers=headers)
-soup = BeautifulSoup(raw.content,'html.parser')
-result = soup.select('span.item_title_wrap')
-for item in result:
-    keyword=item.select_one('span.item_title').text.strip()
-    print(keyword)
+sheet = wb.active
 
-# for k in result:
-#     title=k.select_one('span.keyword').text.strip()
-#     # f.write(title+'\n')
-#     print(type(title))
-# # f.close()
+#직접 지정
+sheet['A1'] ="hello world!"
+sheet1.title ="1st sheet"
+# 직접 지정 2
+sheet2 = wb.create_sheet('2nd sheet')
+sheet1.cell(row=3,column=3).value="BYE!"
+
+#마지막 데이터 추가
+subject =['박종현','박종민','이민철','권영권']
+sheet2.apppend(subject)
+
+for i in range(i):
+    sheet.cell(row=i,column=i).value=i
+
+wb.save('test2.xlsx')

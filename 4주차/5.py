@@ -1,23 +1,27 @@
-import openpyxl
 import requests
 from bs4 import BeautifulSoup
+import openpyxl
 
-wb = openpyxl.Workbook()
+wb=openpyxl.Workbook()
+sheet=wb.active
 
-sheet = wb.active
+# sheet.append 를 사용할 경우 list로 업데이트 해 나감
+sheet.append(['제목','채널'])
 
-#직접 지정
-sheet['A1'] ="hello world!"
-sheet1.title ="1st sheet"
-# 직접 지정 2
-sheet2 = wb.create_sheet('2nd sheet')
-sheet1.cell(row=3,column=3).value="BYE!"
+url='https://tv.kakao.com/category/drama'
+raw = requests.get(url)
 
-#마지막 데이터 추가
-subject =['박종현','박종민','이민철','권영권']
-sheet2.apppend(subject)
+html = BeautifulSoup(raw.text,'html.parser')
 
-for i in range(i):
-    sheet.cell(row=i,column=i).value=i
+clips=html.select("a.link_contents")
+
+# 지난번 반복한 list 에 관련한 rule들을 그대로 가지고 오면 됨
+
+for k in clips:
+    title = k.select_one("strong.tit_item").text.strip()
+    channel = k.select_one("span.txt_item").text.strip()
+    # [scenario 3] text 형태로의 변환이 없을 경우 <class 'bs4.element.Tag'>로 들어오게 됨
+    sheet.append([title,channel])
+    # csv 는 comma 로서 구분이 가능한 확장 파일이지만 xlsx 의 경우 저렇게 append 안에 list형태로 나아가야함
 
 wb.save('test2.xlsx')
