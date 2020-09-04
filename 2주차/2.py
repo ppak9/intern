@@ -26,9 +26,10 @@ print(string1[:6])
 
 print(string1.replace("hyun","min"))
 
-## strip 까지는 소개
+# strip 까지는 소개
 
-## chaining의 경우에는 소개 식으로
+# chaining의 경우에는 소개 식으로
+# chaining의 경우에는 소개 안 하는 것이 차라리 나을 것도 같음 
 
 ## index에 따른 value 개념이 너무나도 중요 by 문자열 
 
