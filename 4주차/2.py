@@ -1,6 +1,6 @@
 
-f = open('athletics.csv','w')
-
+f = open('athletics.csv','w',encoding='UTF-8')
+# open으로 파일 생성 옵션 얘기하기
 player = ['조던','손흥민','윤성빈','박세리']
 events = ['농구','축구','스켈레톤','골프']
 
